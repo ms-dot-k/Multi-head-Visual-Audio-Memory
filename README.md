@@ -54,7 +54,6 @@ python train.py \
 --dataparallel \
 --gpu 0,1,2,3
 ```
-```
 
 Descriptions of training parameters are as follows:
 - `--lrw`: training dataset location (lrw)
