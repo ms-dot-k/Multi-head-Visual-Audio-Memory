@@ -43,7 +43,7 @@ class Memory(nn.Module):
         # B, S, 512
         B, S, C = query.size()
         mer_query = query.view(B * S, -1)
-        tr_fusion, recon_loss, contrastive_loss = None, torch.zeros(1), torch.zeros(1)
+        tr_fusion, recon_loss, contrastive_loss = None, torch.zeros(1).cuda(), torch.zeros(1).cuda()
 
         key_norm = F.normalize(self.key.view(self.head, self.slot, -1), dim=2) #n_head, n_slot, head_dim
         embd_query = self.q_embd(mer_query) #B*S, n_head * head_dim

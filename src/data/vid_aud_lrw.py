@@ -49,7 +49,7 @@ class MultiDataset(Dataset):
             x, y = [random.randint(-5, 5) for _ in range(2)]
         else:
             x, y = 0, 0
-        crop = [79 - 20 + x, 115 - 20 + y, 175 + 20 + x, 211 + 20 + y]  # 96,96 + 40 -- > 136, 136
+        crop = [59 + x, 95 + y, 195 + x, 231 + y]  # 136, 136
         if self.augmentations:
             augmentations1 = transforms.Compose([StatefulRandomHorizontalFlip(0.5)])
         else:
