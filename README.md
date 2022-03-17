@@ -5,7 +5,7 @@ This repository contains the PyTorch implementation of the following paper:
 > Minsu Kim, Jeong Hun Yeo, and Yong Man Ro<br>
 > \[[Paper](https://www.aaai.org/AAAI22Papers/AAAI-6712.KimM.pdf)\]
 
-<div align="center"><img width="50%" src="img/img.png?raw=true" /></div>
+<div align="center"><img width="75%" src="img/img.png?raw=true" /></div>
 
 ## Preparation
 
