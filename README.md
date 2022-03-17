@@ -1,9 +1,9 @@
-# Lip to Speech Synthesis with Visual Context Attentional GAN
+# Distinguishing Homophenes using Multi-head Visual-audio Memory for Lip Reading
 
 This repository contains the PyTorch implementation of the following paper:
-> **Lip to Speech Synthesis with Visual Context Attentional GAN**<br>
-> Minsu Kim, Joanna Hong, and Yong Man Ro<br>
-> \[[Paper](https://proceedings.neurips.cc/paper/2021/file/16437d40c29a1a7b1e78143c9c38f289-Paper.pdf)\] \[[Demo Video](https://drive.google.com/file/d/1jkD6KAMYQ7BPD_Z8oiwhmkA-wa-UcaYF/view?usp=sharing)\]
+> **Distinguishing Homophenes using Multi-head Visual-audio Memory for Lip Reading**<br>
+> Minsu Kim, Jeong Hun Yeo, and Yong Man Ro<br>
+> \[[Paper](https://www.aaai.org/AAAI22Papers/AAAI-6712.KimM.pdf)\]
 
 <div align="center"><img width="75%" src="img/Img.PNG?raw=true" /></div>
 
@@ -19,43 +19,13 @@ This repository contains the PyTorch implementation of the following paper:
 - tensorboard
 - scikit-image
 - pillow
-- librosa
-- pystoi
-- pesq
-- scipy
 
 ### Datasets
-#### Download
-GRID dataset (video normal) can be downloaded from the below link.
-- http://spandh.dcs.shef.ac.uk/gridcorpus/
+LRW dataset can be downloaded from the below link.
+- https://www.robots.ox.ac.uk/~vgg/data/lip_reading/lrw1.html
 
-For data preprocessing, download the face landmark of GRID from the below link. 
-- https://drive.google.com/file/d/1MDLmREuqeWin6CituMn4Z_dhIIJAwDGo/view?usp=sharing
-
-#### Preprocessing
-After download the dataset, preprocess the dataset with the following scripts in `./preprocess`.<br>
-It supposes the data directory is constructed as
-```
-Data_dir
-├── subject
-|   ├── video
-|   |   └── xxx.mpg
-```
-
-1. Extract frames <br>
-`Extract_frames.py` extract images and audio from the video. <br>
-```shell
-python Extract_frames.py --Grid_dir "Data dir of GRID_corpus" --Out_dir "Output dir of images and audio of GRID_corpus"
-```
-
-2. Align faces and audio processing <br>
-`Preprocess.py` aligns faces and generates videos, which enables cropping the video lip-centered during training. <br>
-```shell
-python Preprocess.py \
---Data_dir "Data dir of extracted images and audio of GRID_corpus" \
---Landmark "Downloaded landmark dir of GRID" \
---Output_dir "Output dir of processed data"
-```
+The pre-processing will be done in the data loader.<br>
+The video is cropped with the bounding box \[x1:59, y1:95, x2:195, y2:231\].
 
 ## Training the Model
 The speaker setting (different subject) can be selected by `subject` argument. Please refer to below examples. <br>
