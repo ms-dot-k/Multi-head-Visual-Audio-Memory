@@ -82,6 +82,7 @@ python main.py \
 --mode test --radius 16 --n_slot 88 \
 --test_aug True --distributed False --dataparallel False \
 --gpu 0
+```
 
 Descriptions of training parameters are as follows:
 - `--lrw`: training dataset location (lrw)
