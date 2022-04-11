@@ -1,4 +1,6 @@
 # Distinguishing Homophenes using Multi-head Visual-audio Memory for Lip Reading
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/distinguishing-homophenes-using-multi-head-1/lipreading-on-lip-reading-in-the-wild)](https://paperswithcode.com/sota/lipreading-on-lip-reading-in-the-wild?p=distinguishing-homophenes-using-multi-head-1)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/distinguishing-homophenes-using-multi-head-1/lipreading-on-lrw-1000)](https://paperswithcode.com/sota/lipreading-on-lrw-1000?p=distinguishing-homophenes-using-multi-head-1)
 
 This repository contains the PyTorch implementation of the following paper:
 > **Distinguishing Homophenes using Multi-head Visual-audio Memory for Lip Reading**<br>
