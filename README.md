@@ -31,22 +31,22 @@ The video is cropped with the bounding box \[x1:59, y1:95, x2:195, y2:231\].
 To test the model, run following command:
 ```shell
 # Testing example for LRW
-python main.py \
+python test.py \
 --lrw 'enter_data_path' \
 --checkpoint 'enter_the_checkpoint_path' \
 --batch_size 80 \
---mode test --radius 16 --n_slot 112 \
---test_aug True --distributed False --dataparallel False \
+--radius 16 --n_slot 112 --head 8 \
+--test_aug \
 --gpu 0
 ```
 
 Descriptions of training parameters are as follows:
 - `--lrw`: training dataset location (lrw)
 - `--checkpoint`: the checkpoint file
-- `--batch_size`: batch size  `--mode`: train / val / test
+- `--batch_size`: batch size
 - `--test_aug`: whether performing test time augmentation  `--distributed`: Use DataDistributedParallel  `--dataparallel`: Use DataParallel
-- `--gpu`: gpu for using `--lr`: learning rate `--n_slot`: memory slot size `--radius`: scaling factor for addressing score
-- Refer to `main.py` for the other testing parameters
+- `--gpu`: gpu for using `--lr`: learning rate `--n_slot`: memory slot size `--radius`: scaling factor for addressing score `--head`: number of heads for visual-audio memory
+- Refer to `test.py` for the other testing parameters
 
 ## Pretrained Models
 You can download the pretrained models. <br>
@@ -58,7 +58,7 @@ Put the ckpt in './data/'
 To test the pretrained model, run following command:
 ```shell
 # Testing example for LRW
-python main.py \
+python test.py \
 --lrw 'enter_data_path' \
 --checkpoint ./data/Pretrained_Ckpt.ckpt \
 --batch_size 80
