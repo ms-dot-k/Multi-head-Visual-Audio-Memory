@@ -35,7 +35,7 @@ python main.py \
 --lrw 'enter_data_path' \
 --checkpoint 'enter_the_checkpoint_path' \
 --batch_size 80 \
---mode test --radius 16 --n_slot 88 \
+--mode test --radius 16 --n_slot 112 \
 --test_aug True --distributed False --dataparallel False \
 --gpu 0
 ```
