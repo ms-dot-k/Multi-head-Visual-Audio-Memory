@@ -73,6 +73,58 @@ python test.py \
 |:-----------------------:|:--------:|
 |Resnet18 + MS-TCN + Multi-head Visual-audio Mem   |   88.508   |
 
+## Training the Model
+To train the model, run following command:
+```shell
+# One GPU Training example for LRW
+python train.py \
+--lrw 'enter_data_path' \
+--checkpoint 'enter_the_checkpoint_path' \
+--batch_size 80 \
+--radius 16 --n_slot 112 --head 8 \
+--augmentations \
+--mixup \
+--gpu 0
+```
+
+```shell
+# Dataparallel GPU Training example for LRW
+python train.py \
+--lrw 'enter_data_path' \
+--checkpoint 'enter_the_checkpoint_path' \
+--batch_size 160 \
+--radius 16 --n_slot 112 --head 8 \
+--augmentations \
+--mixup \
+--dataparallel \
+--gpu 0,1
+```
+
+```shell
+# Distributed Dataparallel GPU Training example for LRW
+python -m torch.distributed.launch --nproc_per_node='# of GPU' train.py \
+--lrw 'enter_data_path' \
+--checkpoint 'enter_the_checkpoint_path' \
+--batch_size 80 \
+--radius 16 --n_slot 112 --head 8 \
+--augmentations \
+--mixup \
+--distributed \
+--gpu 0,1,2,3
+```
+
+Descriptions of training parameters are as follows:
+- `--lrw`: training dataset location (lrw)
+- `--checkpoint_dir`: the location for saving checkpoint
+- `--checkpoint`: the checkpoint file
+- `--batch_size`: batch size
+- `--augmentation`: whether performing augmentation  
+- `--distributed`: Use DataDistributedParallel  
+- `--dataparallel`: Use DataParallel
+- `--mixup`: Use mixup augmentation 
+- `--gpu`: gpu for using `--lr`: learning rate `--n_slot`: memory slot size `--radius`: scaling factor for addressing score `--head`: number of heads for visual-audio memory
+- Refer to `train.py` for the other training parameters
+
 ## Citation
 If you find this work useful in your research, please cite the paper:
 ```
