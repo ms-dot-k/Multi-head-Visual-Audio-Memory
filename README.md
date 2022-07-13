@@ -80,7 +80,7 @@ To train the model, run following command:
 python train.py \
 --lrw 'enter_data_path' \
 --checkpoint 'enter_the_checkpoint_path' \
---batch_size 80 \
+--batch_size 40 \
 --radius 16 --n_slot 112 --head 8 \
 --augmentations \
 --mixup \
@@ -92,7 +92,7 @@ python train.py \
 python train.py \
 --lrw 'enter_data_path' \
 --checkpoint 'enter_the_checkpoint_path' \
---batch_size 160 \
+--batch_size 80 \
 --radius 16 --n_slot 112 --head 8 \
 --augmentations \
 --mixup \
@@ -105,7 +105,7 @@ python train.py \
 python -m torch.distributed.launch --nproc_per_node='# of GPU' train.py \
 --lrw 'enter_data_path' \
 --checkpoint 'enter_the_checkpoint_path' \
---batch_size 80 \
+--batch_size 40 \
 --radius 16 --n_slot 112 --head 8 \
 --augmentations \
 --mixup \
