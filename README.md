@@ -128,9 +128,11 @@ Descriptions of training parameters are as follows:
 ## Citation
 If you find this work useful in your research, please cite the paper:
 ```
-@article{kim2022distinguishing,
+@inproceedings{kim2022distinguishing,
   title={Distinguishing Homophenes using Multi-head Visual-audio Memory for Lip Reading},
   author={Kim, Minsu and Yeo, Jeong Hun and Ro, Yong Man},
+  booktitle={Proceedings of the 36th AAAI Conference on Artificial Intelligence, Vancouver, BC, Canada},
+  volume={22},
   year={2022}
 }
 ```
