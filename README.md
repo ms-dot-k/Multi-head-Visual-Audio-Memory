@@ -55,7 +55,7 @@ You can download the pretrained models. <br>
 Put the ckpt in './data/'
 
 **Pretrained model**
-- https://drive.google.com/file/d/1YkDb4gcX1UbMTd01uJ24WcUc-VXu0Lgd/view?usp=sharing
+- https://kaistackr-my.sharepoint.com/:u:/g/personal/ms_k_kaist_ac_kr/Ed3LRWN_GYZOmG_vZVxagaIB9r3onu1S24QM1VDiE-ZoCg?e=fTeEri
 
 To test the pretrained model, run following command:
 ```shell
